@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="sessionModel" name="sessionModel"
+		class="com.bond.assignment.atm.model.SessionModel">
+	</bean>
+	<bean id="sessionService" name="sessionService"
+		class="com.bond.assignment.atm.service.SessionService">
+
+		<constructor-arg index="0" ref="sessionModel"></constructor-arg>
+	</bean>
+	<bean id="validatorService" name="validatorService"
+		class="com.bond.assignment.atm.service.ValidatorService">
+	</bean>
+	<bean id="transactionData" name="transactionData"
+		class="com.bond.assignment.atm.dao.TransactionData">
+	</bean>
+	<bean id="accountData" class="com.bond.assignment.atm.dao.AccountDao">
+		<constructor-arg index="0" ref="sessionService"></constructor-arg>
+	</bean>
+	<bean id="accountService" class="com.bond.assignment.atm.service.AccountService">
+		<constructor-arg index="0" ref="sessionService"></constructor-arg>
+		<constructor-arg index="1" ref="validatorService"></constructor-arg>
+		<constructor-arg index="2" ref="accountData"></constructor-arg>
+	</bean>
+
+</beans>

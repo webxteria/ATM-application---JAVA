@@ -6,15 +6,12 @@ import com.bond.assignment.atm.service.impl.SessionServiceImpl;
 
 public class SessionService implements SessionServiceImpl {
 
-	SessionModel sessionModel = new SessionModel();
+	SessionModel sessionModel ;
+	
+	public SessionService(SessionModel sessionModel) {
+		this.sessionModel = sessionModel;
+	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.bond.assignment.atm.service.impl.SessionServiceImpl#setSession(com.
-	 * bond.assignment.atm.model.AccountModel)
-	 */
 	@Override
 	public SessionModel setSession(AccountModel accountModel) {
 		sessionModel.setActiveUserAccount(accountModel.getAccountNumber());

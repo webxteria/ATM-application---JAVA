@@ -36,11 +36,6 @@ public class Menu {
 
 	}
 
-	private void viewForCreateAccount() {
-		System.out.println("Please Enter your card Number");
-
-	}
-
 	public void renderAccountsList(ResultSet rs) throws SQLException {
 		// TODO Auto-generated method stub
 		System.out.println("Account Number \t Account Balance");

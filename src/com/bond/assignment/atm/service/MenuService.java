@@ -9,13 +9,13 @@ import com.bond.assignment.atm.service.impl.MenuServiceImpl;
 import com.bond.assignment.atm.service.impl.TransactionServiceImpl;
 import com.bond.assignment.atm.view.Menu;
 
-public class MenuServiceImp implements MenuServiceImpl {
+public class MenuService implements MenuServiceImpl {
 
 	private Scanner inputScanner;
 	private AccountServiceImpl accountService;
 	private TransactionServiceImpl transactionService;
 
-	public MenuServiceImp(Scanner inputScanner, AccountServiceImpl accountService,
+	public MenuService(Scanner inputScanner, AccountServiceImpl accountService,
 			TransactionServiceImpl transactionService) {
 		super();
 		this.inputScanner = inputScanner;
@@ -23,14 +23,8 @@ public class MenuServiceImp implements MenuServiceImpl {
 		this.transactionService = transactionService;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.bond.assignment.atm.service.impl.MenuServiceImpll#menuHandler(com.
-	 * bond.assignment.atm.model.SessionModel,
-	 * com.bond.assignment.atm.view.Menu)
-	 */
+
+	
 	@Override
 	public void menuHandler(SessionModel currentUserAccountDetails, Menu view) throws SQLException {
 		view.renderMenu(currentUserAccountDetails.getUserType());

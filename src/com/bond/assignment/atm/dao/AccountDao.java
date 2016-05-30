@@ -1,26 +1,24 @@
 package com.bond.assignment.atm.dao;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import com.bond.assignment.atm.model.AccountModel;
 import com.bond.assignment.atm.model.TransactionModel;
-import com.bond.assignment.atm.service.SessionService;
 import com.bond.assignment.atm.service.impl.SessionServiceImpl;
 
 public class AccountDao {
 
-	private Statement statement;
-	private PreparedStatement preparedStatement;
 	Database db = new Database();
 	private final int adminAccountNumber = 440101;
 	private final int adminAccountPin = 6470;
 	float amount;
-	SessionServiceImpl sessionService = new SessionService();
+	SessionServiceImpl sessionService;
 
+	public AccountDao(SessionServiceImpl sessionService){
+		this.sessionService = sessionService;
+	}
 	public boolean createNewUserAccount(int accountNumber) throws SQLException {
 		try {
 

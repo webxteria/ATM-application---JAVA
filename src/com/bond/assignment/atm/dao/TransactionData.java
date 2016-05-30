@@ -1,6 +1,5 @@
 package com.bond.assignment.atm.dao;
 
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.bond.assignment.atm.model.AccountModel;
@@ -8,12 +7,6 @@ import com.bond.assignment.atm.model.SessionModel;
 import com.bond.assignment.atm.model.TransactionModel;
 
 public class TransactionData {
-	private int transactionId;
-	private int transactionType;
-	private PreparedStatement prepareStatement;
-	private final int transfer = 1;
-	private final int deposit = 2;
-	private final int withdraw = 3;
 	Database db = new Database();
 	SessionModel sessionModel = new SessionModel();
 
